@@ -30,7 +30,35 @@ app.get('/user/:id/edit', (req, res) => {
     <button type="submit" class="btn btn-primary">
 Save Changes
  </button>
+  <button type="submit" hx-get="/index.html"
+class="btn btn-secondary">
+Cancel
+</button>
  </form>
+ `);
+});
+
+// Handle PUT request for editing
+app.put('/user/:id', (req, res) => {
+    const name = req.body.name;
+    const bio = req.body.bio;
+    // Send the updated profile back
+    res.send(`
+    <div class="card" style="width: 18rem;"
+    hx-target="this"
+    hx-swap="outerHTML"
+    >
+    <div class="card-body">
+    <h5 class="card-title">${name}</h5>
+ <p class="card-text">
+ ${bio}
+ </p>
+ <button href="#" class="btn btn-primary"
+ hx-get="/user/1/edit">
+ Click To Edit
+ </button>
+ </div>
+ </div>
  `);
 });
 
