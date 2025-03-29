@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('htmx_tutorial', '0001_initial'),
+        ('project_tut', '0001_initial'),
     ]
 
     operations = [
