@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Tracker</title>
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => {
+                document.querySelectorAll(".alert").forEach(el => el.remove());
+            }, 3000);
+        });
+    </script>
     <style>
         .btn {
             display: inline-block;
@@ -21,17 +29,14 @@
 
         .btn-add {
             background-color: #28a745;
-            /* Green for adding books */
         }
 
         .btn-edit {
             background-color: #ffc107;
-            /* Yellow for editing */
         }
 
         .btn-delete {
             background-color: #dc3545;
-            /* Red for deleting */
         }
 
         .btn:hover {
