@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <h2>Welcome to the Book Tracker</h2>
-    <a href="{% url 'book_list' %}" class="btn">View Your Books</a>
-    {% if not user.is_authenticated %}
-        <a href="{% url 'register' %}" class="btn">Register</a>
-    {% endif %}
-{% endblock %}
